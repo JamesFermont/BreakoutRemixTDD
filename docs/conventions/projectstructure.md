@@ -13,12 +13,12 @@
         * Blocks
             * Block_[Archetype]_[Name]
             * Block_Breakable_Normal
-              * BlockBreakable01.png
-              * BlockBreakable02.png
-              * Block_Breakable_Bomb
-              * Block_Unbreakable_Normal
-              * ...
+                * BlockBreakable01.png
+                * BlockBreakable02.png
+            * Block_Breakable_Bomb
+            * Block_Unbreakable_Normal
             * ...
+        * ...
     * Scripts
         * Game
             * Add subfolders as necessary
