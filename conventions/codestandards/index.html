@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Version Control - Breakout of the Pongeon TDD</title>
+        <title>Code Standards - Breakout of the Pongeon TDD</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -37,15 +37,19 @@
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
                             <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Workflow <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Conventions <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">Version Control</a>
+    <a href="../versioncontrol/" class="dropdown-item">Version Control</a>
 </li>
                                     
 <li>
-    <a href="../codestandards/" class="dropdown-item">Code Standards</a>
+    <a href="./" class="dropdown-item active">Code Standards</a>
+</li>
+                                    
+<li>
+    <a href="../projectstructure/" class="dropdown-item">Project Structure</a>
 </li>
                                 </ul>
                             </li>
@@ -58,12 +62,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../.." class="nav-link">
+                                <a rel="prev" href="../versioncontrol/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../codestandards/" class="nav-link">
+                                <a rel="next" href="../projectstructure/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -85,8 +89,20 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#version-control" class="nav-link">Version Control</a>
+            <li class="nav-item" data-level="1"><a href="#code-standards" class="nav-link">Code Standards</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#bracket-positioning" class="nav-link">Bracket Positioning</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#class-order-and-spacing" class="nav-link">Class Order and Spacing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#casing" class="nav-link">Casing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -94,12 +110,43 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="version-control">Version Control</h1>
+<h1 id="code-standards">Code Standards</h1>
+<h2 id="bracket-positioning">Bracket Positioning</h2>
+<h3 id="function-declarations">Function Declarations</h3>
+<pre><code>MyFunction() {
+...
+}
+MyFunction2() ...
+</code></pre>
+<h3 id="oneline-statement-shorthands">Oneline Statement Shorthands</h3>
+<pre><code>(a&lt;b?a:b)
+</code></pre>
+<h3 id="if-statements">if statements</h3>
+<pre><code>if () {
+  ...
+} else if {
+  ...
+} else {
+  ...
+}
+</code></pre>
+<h2 id="class-order-and-spacing">Class Order and Spacing</h2>
+<ol>
+<li>Const</li>
+<li>Variables</li>
+<li>MonoBehaviour Functions</li>
+<li>Functions</li>
+<li>Coroutines</li>
+</ol>
+<h2 id="casing">Casing</h2>
 <ul>
-<li>Locking &amp; Releasing of scenes (to avoid working on the same scene)</li>
-<li>Daily Pull mandatory (Project must NOT be open in Unity during Pull!)!</li>
-<li>Daily Push mandatory (If work in Unity was done)</li>
-<li>Weekly playable build appreciated</li>
+<li>MY_CONST</li>
+<li>MyFunction</li>
+<li>MyClass</li>
+<li>myVariable</li>
+<li>MyEnum.MY_MODE</li>
+<li>IMyInterface</li>
+<li>MyCoroutine</li>
 </ul></div>
             </div>
         </div>
