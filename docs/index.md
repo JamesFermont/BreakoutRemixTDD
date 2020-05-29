@@ -1,17 +1,17 @@
-# Welcome to MkDocs
+# Welcome to the BoP Technical Design Document
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Project Conditions
 
-## Commands
+* VCS: Git with Git Kraken GUI
+* Unity Version: 2019.3.13f1
+  * Only consider upgrading for an LTS release
+* Programming Language: C#
+* Coding Paradigm: Object Oriented
+* Target Platform: PC
+* Tools: MkDocs for Documentation
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Proposed Design
+* Physics based collision
+* Velocity based motion
+* Optimal component customizability for cooperation with Game Designers
+* Modular block component design supporting free combination of behaviours

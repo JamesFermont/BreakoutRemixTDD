@@ -1,6 +1,7 @@
 site_name: Breakout of the Pongeon TDD
 nav:
     - Home: 'index.md'
-    - 'Workflow':
-        - "Version Control": 'workflow/versioncontrol.md'
-        - "Code Standards": 'workflow/codestandards.md'
+    - 'Conventions':
+        - "Version Control": 'conventions/versioncontrol.md'
+        - "Code Standards": 'conventions/codestandards.md'
+        - "Project Structure": 'conventions/projectstructure.md'
