@@ -5,3 +5,6 @@ nav:
         - "Version Control": 'conventions/versioncontrol.md'
         - "Code Standards": 'conventions/codestandards.md'
         - "Project Structure": 'conventions/projectstructure.md'
+    - 'Assets':
+        - "Sounds": 'assets/sounds.md'
+        - "Sprites": 'assets/sprites.md'
