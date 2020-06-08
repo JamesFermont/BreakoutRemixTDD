@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Project Structure - Breakout of the Pongeon TDD</title>
+        <title>Sprites - Breakout of the Pongeon TDD</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -36,33 +36,33 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Conventions <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../versioncontrol/" class="dropdown-item">Version Control</a>
+    <a href="../../conventions/versioncontrol/" class="dropdown-item">Version Control</a>
 </li>
                                     
 <li>
-    <a href="../codestandards/" class="dropdown-item">Code Standards</a>
+    <a href="../../conventions/codestandards/" class="dropdown-item">Code Standards</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Project Structure</a>
+    <a href="../../conventions/projectstructure/" class="dropdown-item">Project Structure</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Assets <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../assets/sounds/" class="dropdown-item">Sounds</a>
+    <a href="../sounds/" class="dropdown-item">Sounds</a>
 </li>
                                     
 <li>
-    <a href="../../assets/sprites/" class="dropdown-item">Sprites</a>
+    <a href="./" class="dropdown-item active">Sprites</a>
 </li>
                                 </ul>
                             </li>
@@ -75,12 +75,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../codestandards/" class="nav-link">
+                                <a rel="prev" href="../sounds/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../assets/sounds/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -102,8 +102,12 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#project-structure" class="nav-link">Project Structure</a>
+            <li class="nav-item" data-level="1"><a href="#sprites" class="nav-link">Sprites</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#sizing" class="nav-link">Sizing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -111,55 +115,48 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="project-structure">Project Structure</h1>
-<ul>
-<li>Assets</li>
-<li>MyAssets<ul>
-<li>Scenes<ul>
-<li>UI</li>
-<li>Level<ul>
-<li>Level_01</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Prefabs</li>
-<li>Materials</li>
-<li>Sprites<ul>
-<li>Ball</li>
-<li>Blocks<ul>
-<li>Block_[Archetype]_[Name]</li>
-<li>Block_Breakable_Normal<ul>
-<li>BlockBreakable01.png</li>
-<li>BlockBreakable02.png</li>
-</ul>
-</li>
-<li>Block_Breakable_Bomb</li>
-<li>Block_Unbreakable_Normal</li>
-<li>...</li>
-</ul>
-</li>
-<li>...</li>
-</ul>
-</li>
-<li>Scripts<ul>
-<li>Game<ul>
-<li>Add subfolders as necessary</li>
-</ul>
-</li>
-<li>UI<ul>
-<li>Add subfolders as necessary</li>
-</ul>
-</li>
-<li>LevelEditor<ul>
-<li>Add subfolders as necessary</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul></div>
+<h1 id="sprites">Sprites</h1>
+<h2 id="sizing">Sizing</h2>
+<p>This is a list of all GameObjects using sprites and their respective size:</p>
+<table>
+<thead>
+<tr>
+<th>Object Name</th>
+<th>Native Pixel Size</th>
+<th>Asset Size</th>
+<th>Unity Unit Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Size 1 Block</td>
+<td>64x40 px</td>
+<td>256x160 px</td>
+<td>0.64, 0.40</td>
+</tr>
+<tr>
+<td>Ball</td>
+<td>20x20 px</td>
+<td>80x80 px</td>
+<td>0.2, 0.2</td>
+</tr>
+<tr>
+<td>Paddle*</td>
+<td>192x40 px</td>
+<td>768x160 px</td>
+<td>1.92, 0.4</td>
+</tr>
+<tr>
+<td>Background</td>
+<td>1280x720 px</td>
+<td>5120x2880 px</td>
+<td>12.8, 7.2</td>
+</tr>
+</tbody>
+</table>
+<p>* The current test paddle sprite is only 20px in height but the game object is 40px in height</p>
+<h3 id="fitting-the-scaling">Fitting the scaling</h3>
+<p>Since we work with 4x native sprites we have to make some adjustments to make them fit the intended game size. When implementing a new sprite, set it's <strong>Pixels per Unit</strong> value from the default <strong>100</strong> to <strong>400</strong>.</p></div>
             </div>
         </div>
 

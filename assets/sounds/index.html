@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Project Structure - Breakout of the Pongeon TDD</title>
+        <title>Sounds - Breakout of the Pongeon TDD</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -36,33 +36,33 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Conventions <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../versioncontrol/" class="dropdown-item">Version Control</a>
+    <a href="../../conventions/versioncontrol/" class="dropdown-item">Version Control</a>
 </li>
                                     
 <li>
-    <a href="../codestandards/" class="dropdown-item">Code Standards</a>
+    <a href="../../conventions/codestandards/" class="dropdown-item">Code Standards</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Project Structure</a>
+    <a href="../../conventions/projectstructure/" class="dropdown-item">Project Structure</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Assets <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../assets/sounds/" class="dropdown-item">Sounds</a>
+    <a href="./" class="dropdown-item active">Sounds</a>
 </li>
                                     
 <li>
-    <a href="../../assets/sprites/" class="dropdown-item">Sprites</a>
+    <a href="../sprites/" class="dropdown-item">Sprites</a>
 </li>
                                 </ul>
                             </li>
@@ -75,12 +75,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../codestandards/" class="nav-link">
+                                <a rel="prev" href="../../conventions/projectstructure/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../assets/sounds/" class="nav-link">
+                                <a rel="next" href="../sprites/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -102,8 +102,16 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#project-structure" class="nav-link">Project Structure</a>
+            <li class="nav-item" data-level="1"><a href="#sounds" class="nav-link">Sounds</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#implementation" class="nav-link">Implementation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#use" class="nav-link">Use</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -111,55 +119,31 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="project-structure">Project Structure</h1>
-<ul>
-<li>Assets</li>
-<li>MyAssets<ul>
-<li>Scenes<ul>
-<li>UI</li>
-<li>Level<ul>
-<li>Level_01</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Prefabs</li>
-<li>Materials</li>
-<li>Sprites<ul>
-<li>Ball</li>
-<li>Blocks<ul>
-<li>Block_[Archetype]_[Name]</li>
-<li>Block_Breakable_Normal<ul>
-<li>BlockBreakable01.png</li>
-<li>BlockBreakable02.png</li>
-</ul>
-</li>
-<li>Block_Breakable_Bomb</li>
-<li>Block_Unbreakable_Normal</li>
-<li>...</li>
-</ul>
-</li>
-<li>...</li>
-</ul>
-</li>
-<li>Scripts<ul>
-<li>Game<ul>
-<li>Add subfolders as necessary</li>
-</ul>
-</li>
-<li>UI<ul>
-<li>Add subfolders as necessary</li>
-</ul>
-</li>
-<li>LevelEditor<ul>
-<li>Add subfolders as necessary</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul></div>
+<h1 id="sounds">Sounds</h1>
+<h2 id="implementation">Implementation</h2>
+<p>To implement a new sound, open the "AudioManager" prefab located in the folder "MyAssets/Prefabs/AudioManager". You will find a component attached to it called "AudioManager" with a "Sounds" public table.</p>
+<ol>
+<li>Increase the "Size" value of the sounds array by 1</li>
+<li>Scroll down to your newly created entry and change it's name</li>
+<li>Drag the sound to be added into the AudioClip field</li>
+<li>Define it's type (SFX or BGM), whether or not it should loop as well as its default volume and pitch.</li>
+<li>Done!</li>
+</ol>
+<h2 id="use">Use</h2>
+<h3 id="methods">Methods</h3>
+<p>If your script needs to play a sound effect, reference the AudioManager game object. It is present in every scene so there is no need to create one.</p>
+<pre><code>AudioManager.Play(string name);
+</code></pre>
+<p>Plays the Sound that matches this name.</p>
+<pre><code>AudioManager.Stop(string name);
+</code></pre>
+<p>Stops playback of the Sound that matches this name.</p>
+<pre><code>AudioManager.UpdatePitch(string name, float pitch);
+</code></pre>
+<p>Updates the pitch of the Sound that matches this name to this pitch. Note that pitch is clamped between 0.1f and 3f.</p>
+<pre><code>AudioManager.UpdateVolumeOfType(SoundType type, float volume);
+</code></pre>
+<p>Updates the volume of all sounds that match this SoundType. Should only be used in the creation of the Options menu.</p></div>
             </div>
         </div>
 
