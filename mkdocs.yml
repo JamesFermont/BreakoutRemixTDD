@@ -8,3 +8,5 @@ nav:
     - 'Assets':
         - "Sounds": 'assets/sounds.md'
         - "Sprites": 'assets/sprites.md'
+    - 'Processes':
+        - "Public Variables": 'processes/public_variables.md'
