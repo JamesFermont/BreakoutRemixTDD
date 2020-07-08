@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Code Standards - Breakout of the Pongeon TDD</title>
+        <title>How to create a new block for the Game - Breakout of the Pongeon TDD</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -36,20 +36,20 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Conventions <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../versioncontrol/" class="dropdown-item">Version Control</a>
+    <a href="../../conventions/versioncontrol/" class="dropdown-item">Version Control</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Code Standards</a>
+    <a href="../../conventions/codestandards/" class="dropdown-item">Code Standards</a>
 </li>
                                     
 <li>
-    <a href="../projectstructure/" class="dropdown-item">Project Structure</a>
+    <a href="../../conventions/projectstructure/" class="dropdown-item">Project Structure</a>
 </li>
                                 </ul>
                             </li>
@@ -71,7 +71,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../processes/public_variables/" class="dropdown-item">Public Variables</a>
+    <a href="../public_variables/" class="dropdown-item">Public Variables</a>
 </li>
                                 </ul>
                             </li>
@@ -83,16 +83,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../versioncontrol/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../projectstructure/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -111,17 +101,25 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#code-standards" class="nav-link">Code Standards</a>
+            <li class="nav-item" data-level="1"><a href="#how-to-create-a-new-block-for-the-game" class="nav-link">How to create a new block for the Game</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#bracket-positioning" class="nav-link">Bracket Positioning</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#class-order-and-spacing" class="nav-link">Class Order and Spacing</a>
+            <li class="nav-item" data-level="2"><a href="#drag-the-base_block-prefab-into-any-scene" class="nav-link">Drag the "Base_Block" prefab into any scene</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#casing" class="nav-link">Casing</a>
+            <li class="nav-item" data-level="2"><a href="#assign-it-a-base-sprite" class="nav-link">Assign it a base sprite</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#add-block-behaviours-to-your-liking" class="nav-link">Add block behaviours to your liking</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tweak-the-parameters-to-your-liking" class="nav-link">Tweak the parameters to your liking</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#save-the-new-block-as-a-prefab" class="nav-link">Save the new block as a prefab</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -132,44 +130,50 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="code-standards">Code Standards</h1>
-<h2 id="bracket-positioning">Bracket Positioning</h2>
-<h3 id="function-declarations">Function Declarations</h3>
-<pre><code>MyFunction() {
-...
-}
-MyFunction2() ...
-</code></pre>
-<h3 id="oneline-statement-shorthands">Oneline Statement Shorthands</h3>
-<pre><code>(a&lt;b?a:b)
-</code></pre>
-<h3 id="if-statements">if statements</h3>
-<pre><code>if () {
-  ...
-} else if {
-  ...
-} else {
-  ...
-}
-</code></pre>
-<h2 id="class-order-and-spacing">Class Order and Spacing</h2>
-<ol>
-<li>Const</li>
-<li>Variables</li>
-<li>MonoBehaviour Functions</li>
-<li>Functions</li>
-<li>Coroutines</li>
-</ol>
-<h2 id="casing">Casing</h2>
-<ul>
-<li>MY_CONST</li>
-<li>MyFunction</li>
-<li>MyClass</li>
-<li>myVariable</li>
-<li>MyEnum.MY_MODE</li>
-<li>IMyInterface</li>
-<li>MyCoroutine</li>
-</ul></div>
+<h1 id="how-to-create-a-new-block-for-the-game">How to create a new block for the Game</h1>
+<h2 id="drag-the-base_block-prefab-into-any-scene">Drag the "Base_Block" prefab into any scene</h2>
+<p>It is located in the folder "MyAssets/prefabs/Base_Block".</p>
+<p>You can use any scene for this as by the end you will delete </p>
+<p>The base block has the BlockManager component attached to it. With it, you can set up the health points of the block as well as whether or not the block is immune to damage by default.</p>
+<p>The BlockManager also holds information how big the block is in <strong>Level Editor Grid Size</strong>. The default block has a size of 1x1, adjust this value based on the size of the sprite/block you wish to implement.</p>
+<h2 id="assign-it-a-base-sprite">Assign it a base sprite</h2>
+<p>Every block is a sprite by nature and as such features a SpriteRenderer component. Drag and drop the sprite you want this new block to use into the Sprite field of the SpriteRenderer component.</p>
+<h2 id="add-block-behaviours-to-your-liking">Add block behaviours to your liking</h2>
+<p>Go into the "MyAssets/Scripts/Game/Block/Effects" folder and add scripts to the prefab that you wish to add.<br />
+Currently there are these block behaviours available:</p>
+<table>
+<thead>
+<tr>
+<th>Behaviour Name</th>
+<th>Effect</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Revive</td>
+<td>The block will reappear after destruction</td>
+<td>Whether to respawn after ball bounces or time and the amount until respawn</td>
+</tr>
+<tr>
+<td>Circle Explosion</td>
+<td>The block will deal damage to surrounding blocks in a circle area</td>
+<td>Amount of damage dealt, radius of explosion</td>
+</tr>
+<tr>
+<td>Horizontal Line Explosion</td>
+<td>The block will deal damage to all blocks on the same horizontal line as itself.</td>
+<td>Amount of damage dealt</td>
+</tr>
+</tbody>
+</table>
+<p>Some of these effects also have a type called "ON_DAMAGE", "ON_DESTROYED" or "ON_ALL".
+* ON_DAMAGE will trigger the effect whenever the block is hit, but not destroyed.
+* ON_DESTROYED will trigger the effect whenever the block is destroyed.
+* ON_ALL will trigger the effect whenever the block is hit or destroyed.</p>
+<h2 id="tweak-the-parameters-to-your-liking">Tweak the parameters to your liking</h2>
+<p>As mentioned above every behaviour is highly customizable and you're free to adjust the parameters as you wish to design. Should you require new functionality speak to a programmer to add an item to the project backlog.</p>
+<h2 id="save-the-new-block-as-a-prefab">Save the new block as a prefab</h2></div>
             </div>
         </div>
 
